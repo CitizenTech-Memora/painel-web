@@ -15,14 +15,14 @@ function LembreteVoz() {
   const algumGravando = gravador.horarioGravando !== null
 
     return (
-    <section>
+    <section className="space-y-6">
       <div>
         <h2>Lembrete de voz</h2>
-        <p>
+        <p className="mt-2 text-tinta-suave">
           Grave uma mensagem curta com a sua voz para cada horário, de até {SEGUNDOS_MAXIMOS_LEMBRETE} segundos.
           É ela que a caixa toca na hora da dose.
         </p>
-        <p>
+        <p className="mt-2 text-base text-tinta-suave">
           Os áudios ficam guardados só neste navegador, não vão para a internet.
         </p>
       </div>
@@ -33,11 +33,11 @@ function LembreteVoz() {
       {carregando && <Carregando texto="Carregando os horários..." />}
 
       {!carregando && horarios.length === 0 && (
-        <p>Nenhum horário cadastrado. Cadastre os remédios primeiro.</p>
+        <p className="cartao text-tinta-suave">Nenhum horário cadastrado. Cadastre os remédios primeiro.</p>
       )}
 
       {!carregando && (
-        <div>
+        <div className="grid gap-3">
           {horarios.map((horario) => (
             <GravadorVoz
               key={horario}
