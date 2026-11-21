@@ -34,7 +34,7 @@ function Hoje() {
   }
 
   return (
-    <section>
+    <section className="space-y-6">
       <h2>Hoje</h2>
 
       <MensagemErro mensagem={remediosApi.erro} />
@@ -49,13 +49,13 @@ function Hoje() {
           <AvisoReposicao avisos={remediosApi.avisosReposicao} />
 
           <div>
-            <h3>Doses de hoje</h3>
+            <h3 className="mb-3 text-xl font-bold">Doses de hoje</h3>
             {doses.length === 0 && (
-              <p>
+              <p className="cartao text-tinta-suave">
                 Nenhuma dose prevista para hoje. Cadastre os remédios na tela Remédios.
               </p>
             )}
-            <div>
+            <div className="grid gap-3">
               {doses.map((dose) => (
                 <CardDose key={dose.chave} dose={dose} />
               ))}

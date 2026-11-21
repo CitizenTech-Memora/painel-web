@@ -14,10 +14,12 @@ function AvisoReposicao({ avisos }) {
   }
 
   return (
-    <section aria-label="Aviso de reposição">
+    <section aria-label="Aviso de reposição" 
+    className="cartao border-l-8 
+    border-l-atencao-300">
 
-      <h3>Hora de comprar mais</h3>
-      <ul></ul>
+      <h3 className="font-bold">Hora de comprar mais</h3>
+      <ul className="mt-2 space-y-1 text-tinta-suave"></ul>
         <h3>Hora de comprar mais</h3>
         
         <ul>
