@@ -1,6 +1,7 @@
-import { Routes } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import NavMenu from './components/NavMenu'
+import Hoje from './pages/Hoje'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <main>
         <div>
           <Routes>
+            <Route path="/" element={<Hoje />} />
           </Routes>
         </div>
       </main>
