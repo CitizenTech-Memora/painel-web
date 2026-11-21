@@ -26,21 +26,21 @@ function Historico() {
   const ultimoDia = adesao.dias[adesao.dias.length - 1].data
 
     return (
-    <section>
+    <section className="space-y-6">
       <h2>Histórico</h2>
 
       <MensagemErro mensagem={remediosApi.erro} />
       <MensagemErro mensagem={eventosApi.erro} />
 
-      <div>
-        <p>
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-xl font-bold">
           Semana de {formatarData(primeiroDia)} a {formatarData(ultimoDia)}
         </p>
-        <div>
-          <button type="button" onClick={adesao.semanaAnterior}>
+        <div className="flex gap-2">
+          <button type="button" onClick={adesao.semanaAnterior} className="botao-secundario">
             Semana anterior
           </button>
-          <button type="button" onClick={adesao.proximaSemana} disabled={adesao.ehSemanaAtual}>
+          <button type="button" onClick={adesao.proximaSemana} disabled={adesao.ehSemanaAtual} className="botao-secundario">
             Próxima semana
           </button>
         </div>
@@ -50,10 +50,10 @@ function Historico() {
 
       {!carregando && (
         <>
-          <div>
-            <h3>Adesão da semana</h3>
-            <p>{adesao.taxaSemana}%</p>
-            <p>
+          <div className="rounded-3xl bg-pinho-50 p-6 sm:p-8">
+            <h3 className="text-base font-bold text-pinho-700">Adesão da semana</h3>
+            <p className="mt-1 text-5xl font-bold text-pinho-700">{adesao.taxaSemana}%</p>
+            <p className="mt-2 text-base text-tinta-suave">
               É a parte das doses que saiu da caixa até 20 minutos depois do horário.
             </p>
           </div>
@@ -61,23 +61,23 @@ function Historico() {
           <CalendarioAdesao dias={adesao.dias} />
 
           <div>
-            <h3>Outros números da semana</h3>
-            <ul>
-              <li>
+            <h3 className="mb-3 text-xl font-bold">Outros números da semana</h3>
+            <ul className="cartao divide-y divide-linha p-0">
+              <li className="flex justify-between gap-4 px-5 py-3">
                 <span>Doses que não saíram da caixa</span>
                 <strong>{adesao.perdidas}</strong>
               </li>
-              <li>
+              <li className="flex justify-between gap-4 px-5 py-3">
                 <span>Tentativas de abrir fora de hora</span>
                 <strong>{adesao.foraDeHora}</strong>
               </li>
-              <li>
+              <li className="flex justify-between gap-4 px-5 py-3">
                 <span>Avisos de temperatura alta</span>
                 <strong>{adesao.alertasTemperatura}</strong>
               </li>
-              <li>
+              <li className="flex justify-between gap-4 px-5 py-3">
                 <span>Tempo médio até alguém ver o aviso</span>
-                <strong>{textoTempoResposta(adesao.tempoResposta)}</strong>
+                <strong className="text-right">{textoTempoResposta(adesao.tempoResposta)}</strong>
               </li>
             </ul>
           </div>
