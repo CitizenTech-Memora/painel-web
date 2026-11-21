@@ -5,6 +5,7 @@ import Hoje from './pages/Hoje'
 import Remedios from './pages/Remedios'
 import RedeCuidado from './pages/RedeCuidado'
 import LembreteVoz from './pages/LembreteVoz'
+import Historico from './pages/Historico'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/remedios" element={<Remedios />} />
             <Route path="/rede-de-cuidado" element={<RedeCuidado />} />
             <Route path="/lembrete-de-voz" element={<LembreteVoz />} />
+            <Route path="/historico" element={<Historico />} />
           </Routes>
         </div>
       </main>
