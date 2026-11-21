@@ -1,12 +1,26 @@
-> **Global Solution 2026.2 | CitizenTech** · **Disciplinas:** Web Development e Front-end Design
+<div align="center">
 
 # 💊 Memora · Painel do Cuidador
 
-Painel web do Memora, onde a família acompanha de longe se a pessoa idosa tomou o remédio de cada horário e recebe um aviso quando algo precisa de atenção.
+**Onde a família acompanha de longe se a pessoa idosa tomou o remédio de cada horário**
 
-[![Acessar o painel](https://img.shields.io/badge/Vercel-Acessar%20Painel-black?style=for-the-badge&logo=vercel)](https://memora-painel.vercel.app)
+Status das doses do dia, alertas com fila de avisos para a rede de cuidado, lembrete de voz e adesão semanal, num painel web pensado para o celular.
 
-## 📌 Descrição do projeto
+[![Acessar o painel](https://img.shields.io/badge/Vercel-Acessar%20o%20painel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://memora-painel.vercel.app)
+
+![React](https://img.shields.io/badge/React%2019-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS%20v4-0F172A?style=flat-square&logo=tailwindcss&logoColor=38BDF8)
+![React Router](https://img.shields.io/badge/React%20Router-CA4245?style=flat-square&logo=reactrouter&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=axios&logoColor=white)
+
+<sub>Web Development e Front-end Design · Global Solution 2026.2 · CitizenTech · FIAP</sub>
+
+</div>
+
+---
+
+## Sobre o projeto
 
 Para quem cuida de alguém com Alzheimer, uma das perguntas mais repetidas do dia é: *"será que ela tomou o remédio?"*. A pessoa idosa nem sempre lembra se já tomou, e a família, muitas vezes longe, fica sem ter certeza.
 
@@ -20,7 +34,7 @@ O objetivo é simples: trocar a dúvida por informação, para que a família sa
 
 ---
 
-## 🩺 Como o painel funciona
+## Como o painel funciona
 
 O cuidador cadastra os remédios (com horários, estoque e temperatura máxima) e a rede de cuidado, ou seja, quem recebe os avisos e em que ordem. A partir daí, o painel acompanha os eventos que a caixa envia e mostra a situação de cada dose:
 
@@ -42,7 +56,7 @@ Cada dose também aparece com a cor do compartimento da caixa física: 🟡 amar
 
 ---
 
-## 🖥️ Telas do painel
+## Telas do painel
 
 | Tela | Para que serve |
 |---|---|
@@ -55,7 +69,7 @@ Cada dose também aparece com a cor do compartimento da caixa física: 🟡 amar
 
 ---
 
-## 🎨 Design e acessibilidade
+## Design e acessibilidade
 
 - **Mobile-first:** o layout é feito primeiro para o celular. No computador, o menu vai para a lateral e o conteúdo ganha largura máxima, para a leitura não cansar.
 - **Cores com significado:** verde-pinho calmo como base, verde para "tudo certo", azul para "acontecendo agora" e âmbar para "precisa de você". Não há vermelho: o cuidador já vive preocupado, e o alerta se destaca justamente porque o resto da tela é calmo.
@@ -70,7 +84,7 @@ Cada dose também aparece com a cor do compartimento da caixa física: 🟡 amar
 
 ---
 
-## ▶️ Como executar
+## Como executar
 
 ### Pré-requisitos
 
@@ -78,7 +92,7 @@ Cada dose também aparece com a cor do compartimento da caixa física: 🟡 amar
   Verifique com: `node --version`
 - npm (vem junto com o Node)
 
-### 🟢 Pelo terminal (qualquer sistema)
+### Pelo terminal
 
 ```bash
 # Clone o repositório
@@ -100,7 +114,8 @@ npm run dev
 
 Abra http://localhost:5173 no navegador.
 
-### 🔵 Pelo VS Code
+<details>
+<summary><b>Pelo VS Code</b></summary>
 
 1. Abra o VS Code e clique em **File > Open Folder**
 2. Selecione a pasta do projeto (painel-web)
@@ -109,9 +124,11 @@ Abra http://localhost:5173 no navegador.
 5. Crie o `.env` copiando o `.env.example` (comandos acima)
 6. Rode `npm run dev` e abra o endereço que aparecer no terminal
 
+</details>
+
 > **Atenção:** sem o `.env`, o painel não sabe onde buscar os dados e a tela fica em branco. Se você criar o `.env` com o servidor já rodando, pare com `Ctrl + C` e rode `npm run dev` de novo, porque o Vite só lê o `.env` quando liga.
 
-### 🧪 Dados de exemplo (opcional)
+### Dados de exemplo (opcional)
 
 Para começar com dados fictícios (3 remédios, 3 contatos e os eventos dos últimos 8 dias):
 
@@ -133,7 +150,7 @@ npm run seed
 
 ---
 
-## 🗂️ Estrutura do repositório
+## Estrutura
 
 ```
 painel-web/
@@ -151,7 +168,10 @@ painel-web/
 └── README.md                ← Este arquivo
 ```
 
-## 💬 Organização interna do código
+## Organização interna do código
+
+<details>
+<summary><b>Ver as pastas de <code>src/</code></b></summary>
 
 A lógica de negócio e o acesso aos dados ficam separados dos componentes que desenham a tela.
 
@@ -203,7 +223,9 @@ src/
 └── config/ ← dados da pessoa acompanhada
 ```
 
-## 💾 Persistência de dados
+</details>
+
+## Persistência de dados
 
 O painel usa a **MockAPI.io** como API externa, com o Axios. As URLs já vêm no `.env.example`, então não é preciso criar conta nem mudar nada:
 
@@ -214,7 +236,7 @@ Os **lembretes de voz** ficam guardados só no navegador (no `localStorage`), n�
 
 ---
 
-## ⚠️ Limitações desta versão
+## Limitações desta versão
 
 O Painel do Cuidador é um **protótipo acadêmico**. Nesta versão:
 
@@ -224,7 +246,7 @@ O Painel do Cuidador é um **protótipo acadêmico**. Nesta versão:
 - Os lembretes de voz ficam só no navegador em que foram gravados.
 - O sistema não confirma a ingestão do medicamento e não substitui acompanhamento médico.
 
-## 🛠️ Tecnologias utilizadas
+## Tecnologias utilizadas
 
 - **React 19 com Vite:** interface e ambiente de desenvolvimento.
 - **React Router:** navegação entre as 6 telas.
@@ -236,14 +258,14 @@ O Painel do Cuidador é um **protótipo acadêmico**. Nesta versão:
 - **oxlint:** conferência do código.
 - **Vercel:** publicação do painel.
 
-## 🤖 Uso de inteligência artificial
+## Uso de IA
 
 O uso de IA no painel está documentado no arquivo [AI.md](AI.md): ferramentas usadas, o que foi gerado e como o grupo validou e ajustou cada resultado.
 
-## 👩‍💻 Equipe
+## Equipe
 
 | Nome | RM |
-|------|----|
+|---|---|
 | Eric Kang | 572575 |
 | Guilherme Tomé Nogueira | 570144 |
 | Lucas de Andrade Astorini | 569119 |
